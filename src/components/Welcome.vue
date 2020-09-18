@@ -21,7 +21,7 @@
                 'display-2': !mobile
               }"
             >Povoado do Moinho</h1>
-            <p class="subheading font-weight-regular">Bem vindos ao Povoado do Moinho</p>
+            <p class="subheading font-weight-regular">Bem vindos a Rede comunitária Portal Sem Porteiras</p>
             <p class="font-weight-regular">Esse é o portal digital de entrada a nossa comunidade</p>
           </v-flex>
 
@@ -36,7 +36,7 @@
             >Mapa</h2>
             <p class="subheading font-weight-regular">
               <a @click="toggle">Feche essa janela</a> para explorar o mapa do
-              Moinho.
+              Bairro.
               <!-- <br />Adicione um novo ponto
               <a to="/places">clicando aqui</a>-->
             </p>
