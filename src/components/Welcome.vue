@@ -20,9 +20,21 @@
                 headline: mobile,
                 'display-2': !mobile
               }"
+<<<<<<< HEAD
             >Povoado do Moinho</h1>
             <p class="subheading font-weight-regular">Bem vindos a Rede comunitária Portal Sem Porteiras</p>
             <p class="font-weight-regular">Esse é o portal digital de entrada a nossa comunidade</p>
+=======
+            >
+              Povoado do Moinho
+            </h1>
+            <p class="subheading font-weight-regular">
+              Bem vindos ao Povoado do Moinho
+            </p>
+            <p class="font-weight-regular">
+              Esse é o portal digital de entrada a nossa comunidade
+            </p>
+>>>>>>> upstream/master
           </v-flex>
 
           <v-flex mb-5 xs12>
@@ -33,29 +45,33 @@
                 'subtitle-1': mobile,
                 headline: !mobile
               }"
-            >Mapa</h2>
+            >
+              Mapa
+            </h2>
             <p class="subheading font-weight-regular">
               <a @click="toggle">Feche essa janela</a> para explorar o mapa do
               Bairro.
               <!-- <br />Adicione um novo ponto
-              <a to="/places">clicando aqui</a>-->
+              <a to="/lugares">clicando aqui</a>-->
             </p>
           </v-flex>
           <v-flex :v-show="isWeb" xs12 mb-5>
             <h2
               link
-              @click="toggle && changeRoute('/about')"
+              @click="toggle && changeRoute('/sobre')"
               class="font-weight-bold mb-3"
               :class="{
                 'subtitle-1': mobile,
                 headline: !mobile
               }"
-            >Sobre</h2>
+            >
+              Sobre
+            </h2>
 
             <v-layout justify-center>
-              <p
-                class="subheading font-weight-regular"
-              >Saiba mais sobre na initiativa da rede comunitária</p>
+              <p class="subheading font-weight-regular">
+                Saiba mais sobre na iniciativa da rede comunitária
+              </p>
             </v-layout>
           </v-flex>
 
@@ -85,7 +101,7 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Logo from "~/components/Logo.vue";
 
 export default {
   name: "Welcome",
@@ -110,8 +126,8 @@ export default {
       else this.$router.push(route);
     }
   },
-    components: {
+  components: {
     Logo
-  },
+  }
 };
 </script>

@@ -5,22 +5,45 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
+  icon: './static/images/favicon.png',
   siteName: process.env.SITE_NAME,
   siteDescription: process.env.SITE_DESCRIPTION,
   tileServer: process.env.SITE_DESCRIPTION || `http://localhost:3000`,
   templates: {
     // Place: '/:nome',
     Post: '/:title',
-    Tag: '/tag/:id'
+    Tag: '/tag/:id',
+    Produto: '/produto/:id',
+    Compra: '/compra/:id'
   },
 
   plugins: [
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Produto',
+        path: 'conteudo/produto/*.md',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            create: true
+          }
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        typeName: 'Compra',
+        path: 'conteudo/compra/*.md',
+      }
+    },
     {
       // Create posts from markdown files
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'Post',
-        path: 'content/posts/*.md',
+        path: 'conteudo/jornal/*.md',
         refs: {
           // Creates a GraphQL collection from 'tags' in front-matter and adds a reference.
           tags: {
@@ -33,8 +56,8 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'Place',
-        path: 'content/lugares/*.md',
+        typeName: 'Lugar',
+        path: 'conteudo/lugares/*.md',
         refs: {
           categorias: {
             typeName: 'Categoria',
@@ -47,7 +70,7 @@ module.exports = {
       use: '@gridsome/source-filesystem',
       options: {
         typeName: 'App',
-        path: 'content/apps/*.md',
+        path: 'conteudo/apps/*.md',
         refs: {
           categorias: {
             typeName: 'Categoria',
@@ -59,8 +82,8 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        typeName: 'About',
-        path: 'content/sobre.md'
+        typeName: 'Sobre',
+        path: 'conteudo/sobre.md'
       }
     }
   ],

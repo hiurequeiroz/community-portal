@@ -1,20 +1,19 @@
 <template>
   <v-app id="inspire">
-    <Drawer />
+    <BarraLateral />
     <v-main class>
       <slot />
     </v-main>
   </v-app>
 </template>
 <script>
-import Drawer from '~/components/Drawer.vue'
+import BarraLateral from "~/components/BarraLateral.vue";
 
 export default {
   components: {
-    Drawer,
+    BarraLateral
   }
-}
+};
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>
